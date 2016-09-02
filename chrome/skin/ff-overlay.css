@@ -1,0 +1,9 @@
+/*  skin/overlay.css  */
+
+#ainspector-sidebar-button {
+  list-style-image: url("chrome://ai-sidebar/skin/nav-large.png");
+}
+
+toolbar[iconsize="small"] #ainspector-sidebar-button {
+  list-style-image: url("chrome://ai-sidebar/skin/nav-small.png");
+}

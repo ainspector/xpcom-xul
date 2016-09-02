@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!DOCTYPE bindings SYSTEM "chrome://ai-sidebar/locale/ai-sidebar.dtd">
+
+<bindings xmlns="http://www.mozilla.org/xbl"
+          xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <binding id="ainspector-summary-grid-header">
+    <content>
+      <xul:label
+        class="summary-header-label"
+        value="&ai-summary.label.viol;"
+        tooltiptext="&ai-summary.tooltip.viol;"/>
+      <xul:label
+        class="summary-header-label"
+        value="&ai-summary.label.warn;"
+        tooltiptext="&ai-summary.tooltip.warn;"/>
+      <xul:label
+        class="summary-header-label"
+        value="&ai-summary.label.mc;"
+        tooltiptext="&ai-summary.tooltip.mc;"/>
+      <xul:label
+        class="summary-header-label"
+        value="&ai-summary.label.pass;"
+        tooltiptext="&ai-summary.tooltip.pass;"/>
+    </content>
+    <implementation>
+      <method name="hidePass">
+        <parameter name="value"/>
+        <body>
+          var nodes = document.getAnonymousNodes(this);
+          nodes[3].setAttribute('hidden', value);
+        </body>
+      </method>
+    </implementation>
+  </binding>
+
+  <binding id="ainspector-summary-grid-data">
+    <content>
+      <xul:label
+        class="summary-data-label"
+        tooltiptext="&ai-summary.tooltip.viol;"
+        style="background: #FFAEAE"/>
+      <xul:label
+        class="summary-data-label"
+        tooltiptext="&ai-summary.tooltip.warn;"
+        style="background: #FFEC94"/>
+      <xul:label
+        class="summary-data-label"
+        tooltiptext="&ai-summary.tooltip.mc;"
+        style="background: #B4D8E7"/>
+      <xul:label
+        class="summary-data-label"
+        tooltiptext="&ai-summary.tooltip.pass;"
+        style="background: #B0E57C"/>
+    </content>
+    <implementation>
+      <method name="setData">
+        <parameter name="data"/>
+        <body>
+          var nodes = document.getAnonymousNodes(this);
+          nodes[0].setAttribute('value', data.viol === 0 ? '-' : data.viol);
+          nodes[1].setAttribute('value', data.warn === 0 ? '-' : data.warn);
+          nodes[2].setAttribute('value', data.mc   === 0 ? '-' : data.mc);
+          nodes[3].setAttribute('value', data.pass === 0 ? '-' : data.pass);
+        </body>
+      </method>
+      <method name="hidePass">
+        <parameter name="value"/>
+        <body>
+          var nodes = document.getAnonymousNodes(this);
+          nodes[3].setAttribute('hidden', value);
+        </body>
+      </method>
+    </implementation>
+  </binding>
+
+</bindings>

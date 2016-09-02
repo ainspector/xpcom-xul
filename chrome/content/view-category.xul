@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://ai-sidebar/locale/ai-sidebar.dtd">
+
+<overlay id="ainspector-category-view-overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script src="view-category.js"/>
+
+  <vbox id="ainspector-category-view">
+
+    <vbox>
+      <hbox>
+        <spacer flex="4"/>
+        <grid>
+          <rows>
+            <row class="summary-grid-header"
+              id="ainspector-category-summary-header"/>
+            <row class="summary-grid-data" role="region"
+              id="ainspector-category-summary-data"
+              onfocus="this.setAttribute('style', '&ai-border.focus;')"
+              onblur="this.setAttribute('style', '&ai-border.trans;')"/>
+          </rows>
+        </grid>
+        <spacer flex="4"/>
+      </hbox>
+    </vbox>
+
+    <spacer height="14"/>
+
+    <vbox id="ainspector-rc-tree-header">
+      <hbox align="center" style="padding: 2px 0">
+        <label class="header-label" value="&ai-label.ruleResults;"/>
+        <spacer flex="2"/>
+        <button id="ainspector-rc-default-sort"
+          label="&ai-button.label.sort;"
+          tooltiptext="&ai-button.tooltip.sort;"
+          style="margin: 0"
+          oncommand="ainspectorSidebar.defaultSortRuleResults()"/>
+      </hbox>
+    </vbox>
+
+    <tree id="ainspector-rule-category-tree"
+      rows="10" seltype="single"
+      persist="sortDirection sortResource"
+      sortDirection="descending"
+      sortResource="ainspector-result-col"
+      onselect="ainspectorSidebar.updateSelectedRuleInfo(this)"
+      ondblclick="ainspectorSidebar.handleRCTreeEvent(event)"
+      onkeypress="ainspectorSidebar.handleRCTreeEvent(event)">
+      <treecols>
+        <treecol id="ainspector-rule-col"
+          flex="1" minwidth="70"
+          ignoreincolumnpicker="true"
+          label="&ai-treecol.rule;"
+          tooltiptext="&ai-treecol.ruleTooltip;"
+          persist="width"
+          onclick="ainspectorSidebar.sortRuleResults(this)"
+          class="sortDirectionIndicator"/>
+        <splitter class="tree-splitter"/>
+        <treecol id="ainspector-result-col"
+          width="56" minwidth="56" maxwidth="100"
+          ignoreincolumnpicker="true"
+          label="&ai-treecol.result;"
+          style="text-align: left"
+          tooltiptext="&ai-treecol.resultTooltip;"
+          persist="width"
+          onclick="ainspectorSidebar.sortRuleResults(this)"
+          class="sortDirectionIndicator"/>
+        <splitter class="tree-splitter"/>
+        <!-- "SC" column is hidden by default -->
+        <treecol id="ainspector-wcag-sc-col" hidden="true"
+          width="44" minwidth="44" maxwidth="60"
+          label="&ai-treecol.wcagSC;"
+          style="text-align: left"
+          tooltiptext="&ai-treecol.wcagSCTooltip;"
+          persist="hidden width"
+          onclick="ainspectorSidebar.sortRuleResults(this)"
+          class="sortDirectionIndicator"/>
+        <splitter class="tree-splitter"/>
+        <!-- "Lev." column is hidden by default -->
+        <treecol id="ainspector-level-col" hidden="true"
+          width="44" minwidth="44" maxwidth="60"
+          label="&ai-treecol.level;"
+          style="text-align: left"
+          tooltiptext="&ai-treecol.levelTooltip;"
+          persist="hidden width"
+          onclick="ainspectorSidebar.sortRuleResults(this)"
+          sortDirection="descending"
+          class="sortDirectionIndicator"/>
+        <!-- "Req" column is hidden by default -->
+        <splitter class="tree-splitter"/>
+        <treecol id="ainspector-required-col" hidden="true"
+          width="44" minwidth="44" maxwidth="60"
+          label="&ai-treecol.required;"
+          style="text-align: left"
+          tooltiptext="&ai-treecol.requiredTooltip;"
+          persist="hidden width"
+          onclick="ainspectorSidebar.sortRuleResults(this)"
+          class="sortDirectionIndicator"/>
+      </treecols>
+      <treechildren/>
+    </tree>
+
+    <spacer height="10"/>
+
+    <vbox>
+      <hbox align="center" style="padding: 2px 0">
+        <label class="header-label"
+          id="ainspector-label-selected-rule"
+          value="&ai-label.selectedRule;"/>
+        <spacer flex="2"/>
+        <button id="ainspector-rule-details-button"
+          label="&ai-button.label.ruleDetails;"
+          image="chrome://ai-sidebar/skin/fwd-button.png" dir="reverse"
+          tooltiptext="&ai-button.tooltip.ruleDetails;"
+          style="margin: 0; min-width: 0"
+          oncommand="ainspectorSidebar.selectView(ainspector.viewConst.DETAILS)"/>
+      </hbox>
+    </vbox>
+
+    <vbox id="ainspector-selected-rule"
+      width="360" height="112"
+      onfocus="this.setAttribute('style', '&ai-border.focus;')"
+      onblur="this.setAttribute('style', '&ai-border.normal;')"/>
+
+  </vbox>
+
+</overlay>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://ai-sidebar/locale/ai-sidebar.dtd">
+
+<overlay id="ainspector-guideline-summary-overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script src="summary-wcag.js"/>
+
+  <vbox id="ainspector-guideline-summary">
+    <hbox>
+      <tree id="ainspector-summary-wcag-tree"
+        onselect="ainspectorSidebar.setStateSummaryWCAGTree()"
+        ondblclick="ainspectorSidebar.handleSummaryWCAGTreeEvent(event)"
+        onkeypress="ainspectorSidebar.handleSummaryWCAGTreeEvent(event)"
+        hidecolumnpicker="true"
+        rows="12" flex="1">
+        <treecols>
+          <treecol id="ainspector-summary-wcag-name-col"
+            label="&ai-summary.label.guideline;"
+            flex="3"/>
+          <treecol id="ainspector-summary-wcag-viol-col"
+            label="&ai-summary.label.viol;"
+            tooltiptext="&ai-summary.tooltip.viol;"
+            style="text-align: right; padding-right: 16px"
+            width="58"/>
+          <treecol id="ainspector-summary-wcag-warn-col"
+            label="&ai-summary.label.warn;"
+            tooltiptext="&ai-summary.tooltip.warn;"
+            style="text-align: right; padding-right: 16px"
+            width="58"/>
+          <treecol id="ainspector-summary-wcag-mc-col"
+            label="&ai-summary.label.mc;"
+            tooltiptext="&ai-summary.tooltip.mc;"
+            style="text-align: right; padding-right: 16px"
+            width="58"/>
+          <treecol id="ainspector-summary-wcag-pass-col"
+            label="&ai-summary.label.pass;"
+            tooltiptext="&ai-summary.tooltip.pass;"
+            style="text-align: right; padding-right: 16px"
+            width="58"/>
+        </treecols>
+        <treechildren/>
+      </tree>
+    </hbox>
+  </vbox>
+
+</overlay>

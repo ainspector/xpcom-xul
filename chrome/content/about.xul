@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE dialog  [
+  <!ENTITY % about SYSTEM "chrome://ai-sidebar/locale/about.dtd">
+  %about;
+  <!ENTITY % ai-sidebar SYSTEM "chrome://ai-sidebar/locale/ai-sidebar.dtd">
+  %ai-sidebar;
+]>
+
+<dialog
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  title="&about.about; &ai-sidebar.title;"
+  orient="vertical"
+  autostretch="always"
+  onload="sizeToContent(); ainspector.setAddonVersion(); ainspector.setLibraryVersion();"
+  buttons="accept"
+  buttonlabelaccept="&about.close;">
+
+  <script src="library/oaa_a11y_evaluation.js"/>
+  <script src="about.js"/>
+
+  <groupbox align="center" orient="horizontal" style="background: white;">
+    <vbox>
+      <text value="&ai-sidebar.title;" style="font-weight: bold; font-size: large;"/>
+
+      <separator class="thin"/>
+      <text value="&about.version;" style="font-weight: bold;"/>
+      <text id="ainspector-version" value="" style="padding: 0 &about.indent;"/>
+
+      <separator class="thin"/>
+      <text value="&about.description;" style="font-weight: bold;"/>
+      <text value="&about.line1;" style="padding: 0 &about.indent;"/>
+      <text value="&about.line2;" style="padding: 0 &about.indent;"/>
+      <text value="&about.line3;" style="padding: 0 &about.indent;"/>
+      <text value="&about.line4;" style="padding: 0 &about.indent;"/>
+      <text value="&about.line5;" style="padding: 0 &about.indent;"/>
+
+      <separator class="thin"/>
+      <text value="&about.created-by;" style="font-weight: bold;"/>
+      <text value="&about.author1;" style="padding: 0 &about.indent;"/>
+
+      <separator class="thin"/>
+      <text value="&about.oaa-version;" style="font-weight: bold;"/>
+      <text id="ainspector-oaa-version" value="" style="padding: 0 &about.indent;"/>
+
+      <separator class="thin"/>
+      <text value="&about.library-by;" style="font-weight: bold;"/>
+      <text value="&about.author2;" style="padding: 0 &about.indent;"/>
+
+      <separator class="thin"/>
+      <text value="&about.in-conjunction-with;" style="font-weight: bold;"/>
+      <text value="&about.group1;" style="padding: 0 &about.indent;"/>
+
+      <separator class="thin"/>
+      <text value="&about.contrib-by;" style="font-weight: bold;"/>
+      <text value="&about.author3;" style="padding: 0 &about.indent;"/>
+
+      <separator class="thin"/>
+      <text value="&about.dedicated-to;" style="font-weight: bold;"/>
+      <text value="&about.dedicatee;" style="padding: 0 &about.indent;"/>
+
+      <separator class="thin"/>
+      <text value="&about.distribution;" style="font-weight: bold;"/>
+      <text value="&about.license;" style="padding: 0 &about.indent;"/>
+      <text value=""/>
+    </vbox>
+  </groupbox>
+</dialog>

@@ -1,0 +1,19 @@
+.paneSelector {
+  list-style-image: url("chrome://browser/skin/preferences/Options.png");
+}
+
+radio[pane=ainspector-pane-general] {
+  -moz-image-region: rect(0px, 32px, 32px, 0px);
+} 
+
+radio[pane=ainspector-pane-evaluation] {
+  -moz-image-region: rect(0px, 96px, 32px, 64px);
+}
+
+prefpane {
+  padding-bottom: 1em;
+}
+
+groupbox.secondary, vbox.secondary {
+  padding-top: 1em;
+}

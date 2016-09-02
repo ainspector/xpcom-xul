@@ -1,0 +1,194 @@
+<!ENTITY ainspector.title "AInspector">
+<!ENTITY ai-sidebar.title "&ainspector.title; Sidebar">
+
+<!ENTITY ai-button.label.back              "Back">
+<!ENTITY ai-button.label.evaluate          "Rerun Evaluation">
+<!ENTITY ai-button.label.inspect           "Inspect Element">
+<!ENTITY ai-button.label.preferences       "Preferences">
+<!ENTITY ai-button.label.reports           "Reports">
+<!ENTITY ai-button.label.ruleDetails       "Details">
+<!ENTITY ai-button.label.sort              "Default Sort">
+<!ENTITY ai-button.label.summaryDetails    "Details">
+<!ENTITY ai-button.label.views             "Views">
+
+<!ENTITY ai-button.tooltip.evaluate        "Re-evaluate current page">
+<!ENTITY ai-button.tooltip.inspect         "View element details with the Inspector tool">
+<!ENTITY ai-button.tooltip.preferences     "Open Preferences dialog">
+<!ENTITY ai-button.tooltip.reports         "Generate HTML report">
+<!ENTITY ai-button.tooltip.ruleDetails     "Selected Rule Result details">
+<!ENTITY ai-button.tooltip.sort            "Apply default sorting">
+<!ENTITY ai-button.tooltip.toggle          "Show/Hide &ai-sidebar.title;">
+<!ENTITY ai-button.tooltip.views           "Select Rule Category views">
+
+<!-- views menu labels and accesskeys -->
+
+<!ENTITY ai-label.view.summary     "Summary">
+<!ENTITY ai-label.view.landmarks   "Landmarks">
+<!ENTITY ai-label.view.headings    "Headings">
+<!ENTITY ai-label.view.styles      "Styles/Content">
+<!ENTITY ai-label.view.images      "Images">
+<!ENTITY ai-label.view.links       "Links">
+<!ENTITY ai-label.view.tables      "Tables">
+<!ENTITY ai-label.view.forms       "Forms">
+<!ENTITY ai-label.view.widgets     "Widgets/Scripts">
+<!ENTITY ai-label.view.media       "Audio/Video">
+<!ENTITY ai-label.view.keyboard    "Keyboard Support">
+<!ENTITY ai-label.view.timing      "Timing">
+<!ENTITY ai-label.view.navigation  "Site Navigation">
+<!ENTITY ai-label.view.all-rules   "All Rules">
+
+<!ENTITY ai-menukey.view.summary     "U">
+<!ENTITY ai-menukey.view.landmarks   "L">
+<!ENTITY ai-menukey.view.headings    "H">
+<!ENTITY ai-menukey.view.styles      "S">
+<!ENTITY ai-menukey.view.images      "I">
+<!ENTITY ai-menukey.view.links       "A">
+<!ENTITY ai-menukey.view.tables      "T">
+<!ENTITY ai-menukey.view.forms       "F">
+<!ENTITY ai-menukey.view.widgets     "W">
+<!ENTITY ai-menukey.view.media       "V">
+<!ENTITY ai-menukey.view.keyboard    "K">
+<!ENTITY ai-menukey.view.timing      "T">
+<!ENTITY ai-menukey.view.navigation  "N">
+<!ENTITY ai-menukey.view.all-rules   "R">
+
+<!-- rule category titles -->
+
+<!ENTITY ai-label.title.landmarks  "Landmarks">
+<!ENTITY ai-label.title.headings   "Headings">
+<!ENTITY ai-label.title.styles     "Styles/Content">
+<!ENTITY ai-label.title.images     "Images">
+<!ENTITY ai-label.title.links      "Links">
+<!ENTITY ai-label.title.tables     "Tables">
+<!ENTITY ai-label.title.forms      "Forms">
+<!ENTITY ai-label.title.widgets    "Widgets/Scripts">
+<!ENTITY ai-label.title.media      "Audio/Video">
+<!ENTITY ai-label.title.keyboard   "Keyboard Support">
+<!ENTITY ai-label.title.timing     "Timing">
+<!ENTITY ai-label.title.navigation "Site Navigation">
+<!ENTITY ai-label.title.all-rules  "All Rules">
+
+<!-- summary labels and tooltips -->
+
+<!ENTITY ai-summary.label.categories  "Rule Categories">
+<!ENTITY ai-summary.label.guidelines  "WCAG Guidelines">
+<!ENTITY ai-summary.label.category    "Category">
+<!ENTITY ai-summary.label.guideline   "Guideline">
+<!ENTITY ai-summary.label.viol        "V">
+<!ENTITY ai-summary.label.warn        "W">
+<!ENTITY ai-summary.label.mc          "MC">
+<!ENTITY ai-summary.label.pass        "P">
+<!ENTITY ai-summary.label.hidden      "H">
+
+<!ENTITY ai-summary.tooltip.category  "Rule Category">
+<!ENTITY ai-summary.tooltip.guideline "WCAG Guideline">
+<!ENTITY ai-summary.tooltip.prefix    "Number of rules">
+<!ENTITY ai-summary.tooltip.viol      "&ai-summary.tooltip.prefix; with violations">
+<!ENTITY ai-summary.tooltip.warn      "&ai-summary.tooltip.prefix; with warnings">
+<!ENTITY ai-summary.tooltip.mc        "&ai-summary.tooltip.prefix; with manual checks">
+<!ENTITY ai-summary.tooltip.pass      "&ai-summary.tooltip.prefix; that pass">
+
+<!-- rule details labels and tooltips -->
+
+<!ENTITY ai-details.label.elements   "Element Results">
+<!ENTITY ai-details.label.rule-info  "Details/Actions">
+
+<!-- rule results tree labels and tooltips -->
+
+<!ENTITY ai-label.ruleResults               "Rule Results">
+<!ENTITY ai-label.selectedRule              "Selected Rule">
+<!ENTITY ai-label.noSelection               "nothing selected">
+
+<!ENTITY ai-treecol.rule                    "Rule">
+<!ENTITY ai-treecol.ruleTooltip             "Rule title">
+<!ENTITY ai-treecol.result                  "Result">
+<!ENTITY ai-treecol.resultTooltip           "Evaluation result">
+<!ENTITY ai-treecol.level                   "Lev.">
+<!ENTITY ai-treecol.levelTooltip            "WCAG level">
+<!ENTITY ai-treecol.required                "Req.">
+<!ENTITY ai-treecol.requiredTooltip         "Required vs. recommended in ruleset">
+<!ENTITY ai-treecol.wcagSC                  "SC">
+<!ENTITY ai-treecol.wcagSCTooltip           "WCAG success criterion">
+<!ENTITY ai-treecol.viol                    "V/W">
+<!ENTITY ai-treecol.violTooltip             "Violations/warnings">
+<!ENTITY ai-treecol.manualChecks            "MC">
+<!ENTITY ai-treecol.manualChecksTooltip     "Manual checks">
+<!ENTITY ai-treecol.pass                    "Pass">
+<!ENTITY ai-treecol.passTooltip             "Pass results">
+
+<!-- element results tree labels and tooltips -->
+
+<!ENTITY ai-treecol.element                 "Element">
+<!ENTITY ai-treecol.elementTooltip          "Element name">
+<!ENTITY ai-treecol.position                "Pos.">
+<!ENTITY ai-treecol.positionTooltip         "Position in document">
+<!ENTITY ai-treecol.action                  "Action">
+<!ENTITY ai-treecol.actionTooltip           "Corrective action">
+
+<!-- wcag guidelines -->
+
+<!ENTITY ai-label.view.wcag-1-1 "1.1 Text Alternatives">
+<!ENTITY ai-label.view.wcag-1-2 "1.2 Time-based Media">
+<!ENTITY ai-label.view.wcag-1-3 "1.3 Adaptable">
+<!ENTITY ai-label.view.wcag-1-4 "1.4 Distinguishable">
+<!ENTITY ai-label.view.wcag-2-1 "2.1 Keyboard Accessible">
+<!ENTITY ai-label.view.wcag-2-2 "2.2 Enough Time">
+<!ENTITY ai-label.view.wcag-2-3 "2.3 Seizures">
+<!ENTITY ai-label.view.wcag-2-4 "2.4 Navigable">
+<!ENTITY ai-label.view.wcag-3-1 "3.1 Readable">
+<!ENTITY ai-label.view.wcag-3-2 "3.2 Predictable">
+<!ENTITY ai-label.view.wcag-3-3 "3.3 Input Assistance">
+<!ENTITY ai-label.view.wcag-4-1 "4.1 Compatible">
+
+<!ENTITY ai-label.title.wcag-1-1 "1.1 Text Alternatives">
+<!ENTITY ai-label.title.wcag-1-2 "1.2 Time-based Media">
+<!ENTITY ai-label.title.wcag-1-3 "1.3 Adaptable">
+<!ENTITY ai-label.title.wcag-1-4 "1.4 Distinguishable">
+<!ENTITY ai-label.title.wcag-2-1 "2.1 Keyboard Accessible">
+<!ENTITY ai-label.title.wcag-2-2 "2.2 Enough Time">
+<!ENTITY ai-label.title.wcag-2-3 "2.3 Seizures">
+<!ENTITY ai-label.title.wcag-2-4 "2.4 Navigable">
+<!ENTITY ai-label.title.wcag-3-1 "3.1 Readable">
+<!ENTITY ai-label.title.wcag-3-2 "3.2 Predictable">
+<!ENTITY ai-label.title.wcag-3-3 "3.3 Input Assistance">
+<!ENTITY ai-label.title.wcag-4-1 "4.1 Compatible">
+
+<!-- preference options -->
+
+<!ENTITY ai-label.option.ruleset        "Ruleset: ">
+
+<!-- context information -->
+
+<!ENTITY ai-label.context.location      "Location: ">
+
+<!-- highlight options -->
+
+<!ENTITY ai-description.highlight       "Highlight: ">
+
+<!ENTITY ai-label.highlight.none        "None">
+<!ENTITY ai-label.highlight.selected    "Selected">
+<!ENTITY ai-label.highlight.v-w         "V/W">
+<!ENTITY ai-label.highlight.mc          "MC">
+<!ENTITY ai-label.highlight.all         "All">
+
+<!ENTITY ai-tooltip.highlight-menu      "Choose mode for highlighting elements">
+
+<!ENTITY ai-tooltip.highlight.none      "No elements">
+<!ENTITY ai-tooltip.highlight.selected  "Only selected element">
+<!ENTITY ai-tooltip.highlight.v-w       "Only elements with V or W result">
+<!ENTITY ai-tooltip.highlight.mc        "Only elements with MC result">
+<!ENTITY ai-tooltip.highlight.all       "All elements">
+
+<!-- border styles -->
+
+<!ENTITY ai-border.focus             "border: 1px dotted #78ACDD;">
+<!ENTITY ai-border.normal            "border: 1px solid #bbb;">
+<!ENTITY ai-border.trans             "border: 1px solid transparent">
+
+<!-- delay settings dialog-->
+
+<!ENTITY ai-label.delay.header         "Rerun Evaluation: Specify Delay">
+<!ENTITY ai-label.delay.actionLabel    "Rerun evaluation in">
+<!ENTITY ai-label.delay.stopPrompting  "After this evaluation, stop prompting for delay setting.">
+<!ENTITY ai-label.delay.sec            "sec.">
+<!ENTITY ai-label.delay.min            "min.">

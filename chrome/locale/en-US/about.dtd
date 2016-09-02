@@ -1,0 +1,25 @@
+<!ENTITY about.about "About">
+<!ENTITY about.version "Version">
+<!ENTITY about.close "Close">
+<!ENTITY about.indent "1em">
+
+<!ENTITY about.description "Description">
+<!ENTITY about.line1 "The AInspector Sidebar is a web accessibility tool that evaluates">
+<!ENTITY about.line2 "the page being viewed in the browser according to the rules in">
+<!ENTITY about.line3 "the selected OpenAjax Alliance ruleset, which in turn are based">
+<!ENTITY about.line4 "on WCAG 2.0 and WAI-ARIA requirements. The rule results may">
+<!ENTITY about.line5 "be organized by either Rule Categories or WCAG Guidelines.">
+
+<!ENTITY about.oaa-version "OpenAjax Evaluation Library version">
+<!ENTITY about.created-by "Created by">
+<!ENTITY about.author1 "Nicholas Hoyt">
+<!ENTITY about.library-by "OpenAjax Evaluation Library created by">
+<!ENTITY about.author2 "Jon Gunderson">
+<!ENTITY about.in-conjunction-with "In conjunction with">
+<!ENTITY about.group1 "OpenAjax Alliance Accessibility Task Force">
+<!ENTITY about.contrib-by "Additional code contributions by">
+<!ENTITY about.author3 "Prasanna Bale">
+<!ENTITY about.dedicated-to "Dedicated to">
+<!ENTITY about.dedicatee "Morton N. Hoyt, 1917-2014">
+<!ENTITY about.distribution "Distribution">
+<!ENTITY about.license "Apache License Version 2.0">

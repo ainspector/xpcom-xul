@@ -1,0 +1,33 @@
+<!ENTITY ainspector.title "AInspector">
+
+<!ENTITY prefwindow.title "&ainspector.title; Preferences">
+
+<!ENTITY prefpane.evaluation.title "Evaluation">
+
+<!ENTITY prefpane.general.title "General">
+
+<!ENTITY button.label.restore "Restore Defaults">
+
+<!-- General preferences -->
+
+<!ENTITY groupbox.caption.viewsMenu "&#8216;Views&#8217; menu">
+
+<!ENTITY label.views.wcagMenuitems "Include &#8216;WCAG Guidelines&#8217;">
+
+<!ENTITY groupbox.caption.rerunEvalButton "&#8216;Rerun Evaluation&#8217; button">
+
+<!ENTITY label.rerunButton.rerunNoDelay "Rerun with no delay">
+
+<!ENTITY label.rerunButton.promptForDelay "Prompt for delay setting">
+
+<!ENTITY groupbox.caption.screenReader "Screen reader compatibility">
+
+<!ENTITY label.screenReader.tableCells "Add column header data in table cells">
+
+<!-- Evaluation preferences -->
+
+<!ENTITY groupbox.caption.ruleset "Ruleset">
+
+<!ENTITY groupbox.caption.ruleResults "Rule Results">
+
+<!ENTITY label.results.pass-and-not-applicable "Include &#8216;Pass&#8217; and &#8216;N/A&#8217; results">

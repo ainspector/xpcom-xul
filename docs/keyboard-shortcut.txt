@@ -1,0 +1,53 @@
+----------------------------------------------------------------
+Adding a Keyboard Shortcut for Toggling AInspector Sidebar
+----------------------------------------------------------------
+
+Modifications to ff-overlay.xul
+
+1. Add the keyset container and key element:
+
+  <keyset id="mainKeyset">
+    <key id="ainspector-key-toggle-sidebar"
+      key="u" modifiers="shift accel"
+      command="ainspector-view-sidebar"/>
+  </keyset>
+
+2. Add the key attribute to the menuitem element:
+
+  <menupopup id="viewSidebarMenu">
+    <menuitem id="ainspector-menuitem-toggle-sidebar"
+->    key="ainspector-key-toggle-sidebar"
+      observes="ainspector-view-sidebar"/>
+  </menupopup>
+
+3. Optional change to toolbarbutton element:
+
+Instead of using oncommand="toggleSidebar('ainspector-view-sidebar')"
+using command="ainspector-view-sidebar" as in:
+
+  <toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton id="ainspector-sidebar-button"
+      class="toolbarbutton-1 chromeclass-toolbar-additional"
+      label="&ainspector.title;"
+      tooltiptext="&ai-button.tooltip.toggle;"
+->    command="ainspector-view-sidebar">
+    </toolbarbutton>
+  </toolbarpalette>
+
+has the effect of making the broadcaster element the primary command
+element, and the toolbarbutton element an observer of the broadcaster's
+state (similar to the menuitem's role, with its "observes" attribute).
+The visual effect is that the toolbarbutton will have either a "pressed"
+or "not-pressed" state depending on whether the sidebar is visible.
+
+----------------------------------------------------------------
+Notes:
+
+Since ff-overlay.xul is a Firefox browser overlay, you need to use the
+keyset id of "mainKeyset" to establish the top-level context of the
+shortcut.
+
+Adding the key attribute to the menuitem element will enable the display
+of the shortcut along side the AInspector Sidebar menuitem in the
+View > Sidebar main menu.
+

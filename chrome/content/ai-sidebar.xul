@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://browser/skin/browser.css" type="text/css"?>
+<?xml-stylesheet href="chrome://ai-sidebar/skin/ai-sidebar.css"?>
+<?xul-overlay href="chrome://ai-sidebar/content/views-button.xul"?>
+<?xul-overlay href="chrome://ai-sidebar/content/view-summary.xul"?>
+<?xul-overlay href="chrome://ai-sidebar/content/view-category.xul"?>
+<?xul-overlay href="chrome://ai-sidebar/content/view-details.xul"?>
+<?xul-overlay href="chrome://ai-sidebar/content/ai-context.xul"?>
+<!DOCTYPE page SYSTEM "chrome://ai-sidebar/locale/ai-sidebar.dtd">
+
+<page id="ainspector-sidebar" title="&ai-sidebar.title;"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <stringbundleset>
+    <stringbundle id="ainspector-sidebar-properties"
+      src="chrome://ai-sidebar/locale/ai-sidebar.properties"/>
+    <stringbundle id="ainspector-highlight-properties"
+      src="chrome://ai-highlight/locale/highlight.properties"/>
+  </stringbundleset>
+
+  <script src="library/oaa_a11y_evaluation.js"/>
+  <script src="library/oaa_a11y_rules.js"/>
+  <script src="library/oaa_a11y_rulesets.js"/>
+
+  <script src="ai-sidebar.js"/>
+  <script src="datasource.js"/>
+
+  <commandset id="ainspector-sidebar-commandset">
+    <!-- view selection commands -->
+    <command id="ainspector-cmd-view-summary"
+      label="&ai-label.view.summary;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.SUMMARY)"/>
+    <command id="ainspector-cmd-view-landmarks"
+      label="&ai-label.view.landmarks;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.LANDMARKS)"/>
+    <command id="ainspector-cmd-view-headings"
+      label="&ai-label.view.headings;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.HEADINGS)"/>
+    <command id="ainspector-cmd-view-styles"
+      label="&ai-label.view.styles;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.STYLES)"/>
+    <command id="ainspector-cmd-view-images"
+      label="&ai-label.view.images;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.IMAGES)"/>
+    <command id="ainspector-cmd-view-links"
+      label="&ai-label.view.links;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.LINKS)"/>
+    <command id="ainspector-cmd-view-tables"
+      label="&ai-label.view.tables;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.TABLES)"/>
+    <command id="ainspector-cmd-view-forms"
+      label="&ai-label.view.forms;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.FORMS)"/>
+    <command id="ainspector-cmd-view-widgets"
+      label="&ai-label.view.widgets;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.WIDGETS)"/>
+    <command id="ainspector-cmd-view-media"
+      label="&ai-label.view.media;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.MEDIA)"/>
+    <command id="ainspector-cmd-view-keyboard"
+      label="&ai-label.view.keyboard;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.KEYBOARD)"/>
+    <command id="ainspector-cmd-view-timing"
+      label="&ai-label.view.timing;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.TIMING)"/>
+    <command id="ainspector-cmd-view-navigation"
+      label="&ai-label.view.navigation;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.NAVIGATION)"/>
+    <command id="ainspector-cmd-view-all-rules"
+      label="&ai-label.view.all-rules;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.ALL_RULES)"/>
+    <command id="ainspector-cmd-view-wcag-1-1"
+      label="&ai-label.view.wcag-1-1;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.WCAG_1_1)"/>
+    <command id="ainspector-cmd-view-wcag-1-2"
+      label="&ai-label.view.wcag-1-2;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.WCAG_1_2)"/>
+    <command id="ainspector-cmd-view-wcag-1-3"
+      label="&ai-label.view.wcag-1-3;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.WCAG_1_3)"/>
+    <command id="ainspector-cmd-view-wcag-1-4"
+      label="&ai-label.view.wcag-1-4;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.WCAG_1_4)"/>
+    <command id="ainspector-cmd-view-wcag-2-1"
+      label="&ai-label.view.wcag-2-1;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.WCAG_2_1)"/>
+    <command id="ainspector-cmd-view-wcag-2-2"
+      label="&ai-label.view.wcag-2-2;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.WCAG_2_2)"/>
+    <command id="ainspector-cmd-view-wcag-2-3"
+      label="&ai-label.view.wcag-2-3;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.WCAG_2_3)"/>
+    <command id="ainspector-cmd-view-wcag-2-4"
+      label="&ai-label.view.wcag-2-4;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.WCAG_2_4)"/>
+    <command id="ainspector-cmd-view-wcag-3-1"
+      label="&ai-label.view.wcag-3-1;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.WCAG_3_1)"/>
+    <command id="ainspector-cmd-view-wcag-3-2"
+      label="&ai-label.view.wcag-3-2;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.WCAG_3_2)"/>
+    <command id="ainspector-cmd-view-wcag-3-3"
+      label="&ai-label.view.wcag-3-3;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.WCAG_3_3)"/>
+    <command id="ainspector-cmd-view-wcag-4-1"
+      label="&ai-label.view.wcag-4-1;"
+      oncommand="ainspectorSidebar.selectView(ainspector.viewEnum.WCAG_4_1)"/>
+  </commandset>
+
+  <keyset id="ainspector-sidebar-keyset">
+    <!-- view selection keys -->
+    <key id="ainspector-key-view-summary"
+      command="ainspector-cmd-view-summary"
+      keycode="VK_BACK" modifiers="shift accel"/>
+
+    <!-- navigation keys -->
+    <key id="ainspector-key-back-one-level"
+      oncommand="ainspectorSidebar.backOneLevel()"
+      keycode="VK_BACK" modifiers="accel"/>
+
+    <!-- preferences shortcut -->
+    <key id="ainspector-key-open-preferences"
+      oncommand="ainspectorSidebar.openPreferencesWindow()"
+      key="." modifiers="accel"/>
+  </keyset>
+
+  <hbox align="baseline" class="top-level">
+    <label id="ainspector-view-title" class="header-label"/>
+    <spacer flex="4"/>
+    <button id="ainspector-back-button"
+    label="&ai-button.label.back;"
+    image="chrome://ai-sidebar/skin/back-button-off.png"
+    style="margin-right: 2px"
+    oncommand="ainspectorSidebar.backOneLevel()"/>
+    <button id="ainspector-views-button"/>
+  </hbox>
+
+  <deck id="ainspector-view-deck" class="top-level">
+    <vbox id="ainspector-summary-view"/>
+    <vbox id="ainspector-category-view"/>
+    <vbox id="ainspector-details-view"/>
+  </deck>
+
+  <spacer flex="10"/>
+
+  <vbox class="top-level">
+    <vbox id="ainspector-options" role="region"
+      aria-labelledby="ainspector-options-info"
+      onfocus="this.setAttribute('style', '&ai-border.focus;')"
+      onblur="this.setAttribute('style', '&ai-border.trans;')"/>
+    <spacer height="2"/>
+    <vbox id="ainspector-location" role="region"
+      aria-labelledby="ainspector-location-info"
+      onfocus="this.setAttribute('style', '&ai-border.focus;')"
+      onblur="this.setAttribute('style', '&ai-border.trans;')"/>
+  </vbox>
+
+  <spacer height="4"/>
+
+  <vbox class="top-level">
+    <hbox align="baseline" flex="1">
+      <button
+        label="&ai-button.label.preferences;"
+        tooltiptext="&ai-button.tooltip.preferences;"
+        oncommand="ainspectorSidebar.openPreferencesWindow();"/>
+      <!--
+      <button hidden="true"
+        label="&ai-button.label.reports;"
+        tooltiptext="&ai-button.tooltip.reports;"/>
+      -->
+      <spacer flex="1"/>
+      <label id="ainspector-version-label"/>
+      <spacer flex="1"/>
+      <button id="ainspector-evaluate-button"
+        label="&ai-button.label.evaluate;"
+        tooltiptext="&ai-button.tooltip.evaluate;"
+        oncommand="ainspectorSidebar.rerunBasedOnPreference()"/>
+    </hbox>
+  </vbox>
+</page>

@@ -1,0 +1,54 @@
+Managing New Releases of AInspector Sidebar
+
+----------------------------------------------------------------
+Goals:
+
+Use a phased approach that provides adequate testing before making
+the final version publicly available.
+
+1. First publish an internal release candidate for testing and request
+   that issues be entered at opena11y/fae-ainspector
+
+2. After reviewing any issues that were identified, either address
+   them and loop back to step one, or proceed to the next step.
+
+3. Publish the final release version.
+
+
+----------------------------------------------------------------
+Publish Release Candidate:
+
+1. Check in the changes to Subversion
+   a. Ensure that maxVersion is up to date
+   b. Version ID may have "-beta.n" suffix
+
+2. Create the XPI file
+   a. Ensure desired version of OAA Evaluation Library is in place
+   b. Filename may have "-beta.n" before ".xpi"
+   c. Run the build script
+
+3. Install and test the XPI in Firefox
+
+4. Add the release notes to the ainspector.github.io
+
+5. Upload the XPI to github.com/ainspector/releases
+
+6. Send testing request email with inclusion of release notes
+
+----------------------------------------------------------------
+Publish Final Release:
+
+1. Check in changes to Subversion
+   a. Version ID should NOT have "-beta.n" suffix
+
+2. Create the XPI file
+   a. Ensure desired version of OAA Evaluation Library is in place
+   b. Run the build script
+
+3. Update the release notes if necessary
+
+4. Upload the XPI to github.com/ainspector/releases
+
+5. Update the documentation site: new features, installation guide
+
+6. Send new release email with inclusion of release notes

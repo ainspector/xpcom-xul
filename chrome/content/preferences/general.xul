@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://ai-sidebar/locale/options.dtd">
+
+<overlay id="ainspector-general-preferences-overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <prefpane id="ainspector-pane-general" onpaneload="ainspector.options.initPrefpaneGeneral()">
+    <preferences>
+      <preference id="ainspector-wcag-menuitems-pref" type="bool"
+        name="extensions.ainspector.general.wcagMenuitems"/>
+      <preference id="ainspector-prompt-for-delay-pref" type="bool"
+        name="extensions.ainspector.general.promptForDelay"/>
+      <preference id="ainspector-screen-reader-mode-pref" type="bool"
+        name="extensions.ainspector.general.screenReaderMode"/>
+    </preferences>
+
+    <groupbox>
+      <caption label="&groupbox.caption.viewsMenu;"/>
+      <vbox>
+        <checkbox id="ainspector-wcag-menuitems"
+          preference="ainspector-wcag-menuitems-pref"
+          label="&label.views.wcagMenuitems;"/>
+      </vbox>
+    </groupbox>
+
+    <groupbox class="secondary">
+      <caption label="&groupbox.caption.rerunEvalButton;"/>
+      <vbox>
+        <radiogroup id="ainspector-rerun-eval-button"
+          preference="ainspector-prompt-for-delay-pref">
+          <radio id="ainspector-rerun-no-delay"
+            label="&label.rerunButton.rerunNoDelay;"
+            group="ainspector-rerun-eval-group" value="false"/>
+          <radio id="ainspector-rerun-prompt-for-delay"
+            label="&label.rerunButton.promptForDelay;"
+            group="ainspector-rerun-eval-group" value="true"/>
+        </radiogroup>
+      </vbox>
+    </groupbox>
+
+    <groupbox>
+      <caption label="&groupbox.caption.screenReader;"/>
+      <vbox>
+        <checkbox id="ainspector-screen-reader-mode"
+          preference="ainspector-screen-reader-mode-pref"
+          label="&label.screenReader.tableCells;"/>
+      </vbox>
+    </groupbox>
+
+    <vbox class="secondary">
+      <hbox>
+        <button id="ainspector-button-restore-general"
+          label="&button.label.restore;"
+          oncommand="ainspector.options.resetGeneralPrefs()"/>
+      </hbox>
+    </vbox>
+
+  </prefpane>
+</overlay>

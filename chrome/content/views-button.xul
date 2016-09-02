@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!DOCTYPE overlay SYSTEM "chrome://ai-sidebar/locale/ai-sidebar.dtd">
+
+<overlay id="ainspector-views-button-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script src="views-button.js"/>
+
+  <button id="ainspector-views-button"
+          type="menu" accesskey="a"
+          label="&ai-button.label.views;"
+          tooltiptext="&ai-button.tooltip.views;">
+    <menupopup id="ainspector-sidebar-views"
+               onpopupshowing="ainspectorSidebar.setViewsMenu()">
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-summary"
+                command="ainspector-cmd-view-summary"/>
+      <menuseparator/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-landmarks"
+                command="ainspector-cmd-view-landmarks"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-headings"
+                command="ainspector-cmd-view-headings"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-styles"
+                command="ainspector-cmd-view-styles"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-images"
+                command="ainspector-cmd-view-images"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-links"
+                command="ainspector-cmd-view-links"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-tables"
+                command="ainspector-cmd-view-tables"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-forms"
+                command="ainspector-cmd-view-forms"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-widgets"
+                command="ainspector-cmd-view-widgets"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-media"
+                command="ainspector-cmd-view-media"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-keyboard"
+                command="ainspector-cmd-view-keyboard"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-timing"
+                command="ainspector-cmd-view-timing"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-navigation"
+                command="ainspector-cmd-view-navigation"/>
+      <menuseparator/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-all-rules"
+                command="ainspector-cmd-view-all-rules"/>
+      <menuseparator id="ainspector-sidebar-views-separator"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-wcag-1-1"
+                command="ainspector-cmd-view-wcag-1-1"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-wcag-1-2"
+                command="ainspector-cmd-view-wcag-1-2"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-wcag-1-3"
+                command="ainspector-cmd-view-wcag-1-3"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-wcag-1-4"
+                command="ainspector-cmd-view-wcag-1-4"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-wcag-2-1"
+                command="ainspector-cmd-view-wcag-2-1"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-wcag-2-2"
+                command="ainspector-cmd-view-wcag-2-2"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-wcag-2-3"
+                command="ainspector-cmd-view-wcag-2-3"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-wcag-2-4"
+                command="ainspector-cmd-view-wcag-2-4"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-wcag-3-1"
+                command="ainspector-cmd-view-wcag-3-1"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-wcag-3-2"
+                command="ainspector-cmd-view-wcag-3-2"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-wcag-3-3"
+                command="ainspector-cmd-view-wcag-3-3"/>
+      <menuitem type="radio" name="ainspector-sidebar-view-radio"
+                id="ainspector-sidebar-view-wcag-4-1"
+                command="ainspector-cmd-view-wcag-4-1"/>
+    </menupopup>
+  </button>
+</overlay>

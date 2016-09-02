@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://ai-sidebar/locale/options.dtd">
+
+<overlay id="ainspector-evaluation-preferences-overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <prefpane id="ainspector-pane-evaluation"
+    onpaneload="ainspector.options.initPrefpaneEvaluation()">
+    <preferences>
+      <preference id="ainspector-ruleset-pref" type="int"
+        name="extensions.ainspector.evaluation.ruleset"/>
+      <preference id="ainspector-pass-and-not-appl-pref" type="bool"
+        name="extensions.ainspector.evaluation.passAndNotApplicable"/>
+    </preferences>
+
+    <groupbox>
+      <caption label="&groupbox.caption.ruleset;"/>
+      <vbox>
+        <radiogroup id="ainspector-ruleset"
+          preference="ainspector-ruleset-pref">
+          <radio id="ainspector-ruleset-strict"
+            group="ainspector-ruleset-group" value="2"/>
+          <radio id="ainspector-ruleset-trans"
+            group="ainspector-ruleset-group" value="1"/>
+        </radiogroup>
+      </vbox>
+    </groupbox>
+
+    <groupbox class="secondary">
+      <caption label="&groupbox.caption.ruleResults;"/>
+      <vbox>
+        <checkbox id="ainspector-pass-and-not-applicable"
+          preference="ainspector-pass-and-not-appl-pref"
+          label="&label.results.pass-and-not-applicable;"/>
+      </vbox>
+    </groupbox>
+
+    <vbox class="secondary">
+      <hbox>
+        <button id="ainspector-button-restore-evaluation"
+          label="&button.label.restore;"
+          oncommand="ainspector.options.resetEvaluationPrefs()"/>
+      </hbox>
+    </vbox>
+
+ </prefpane>
+</overlay>

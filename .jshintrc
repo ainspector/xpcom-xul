@@ -1,0 +1,20 @@
+{
+  "browser": "true", // defines globals: window, document, parent, etc.
+  "moz"    : "true", // allows use of let and other Mozilla extensions
+  "undef"  : "true", // detect use of undefined variables
+  "unused" : "true", // detect declared but unused variables
+
+  "predef" : [
+    // XUL
+    "AddonManager",
+    "Application",
+    "Components",
+    "PluralForm",
+    "XPCOMUtils",
+
+    // App
+    "ainspector",
+    "ainspectorSidebar",
+    "OpenAjax"
+  ]
+}

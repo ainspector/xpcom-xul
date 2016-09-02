@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE dialog  [
+  <!ENTITY % ai-sidebar SYSTEM "chrome://ai-sidebar/locale/ai-sidebar.dtd">
+  %ai-sidebar;
+]>
+
+<dialog
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  autostretch="always"
+  buttons="accept,cancel"
+  ondialogaccept="ainspectorSidebar.rerunWithDelaySetting()"
+  ondialogcancel="return true"
+  width="400" height="200"
+  style="font-size: 12px">
+
+  <script src="delay-setting.js"/>
+
+  <dialogheader description="&ai-label.delay.header;" style="font-size: 120%"/>
+  <vbox style="padding: 10px 15px">
+    <hbox align="baseline">
+      <description style="padding-left: 5px">&ai-label.delay.actionLabel;</description>
+      <spacer width="4px"/>
+      <menulist id="ainspector-delay-setting"
+        persist="value label"
+        width="90">
+        <menupopup>
+          <menuitem label="5 &ai-label.delay.sec;"  value="5"/>
+          <menuitem label="10 &ai-label.delay.sec;" value="10"/>
+          <menuitem label="20 &ai-label.delay.sec;" value="20"/>
+          <menuitem label="40 &ai-label.delay.sec;" value="40"/>
+          <menuitem label="1 &ai-label.delay.min;"  value="60"/>
+        </menupopup>
+      </menulist>
+    </hbox>
+    <hbox align="baseline" style="padding-top: 10px">
+      <checkbox id="ainspector-stop-prompting"
+        label="&ai-label.delay.stopPrompting;"/>
+    </hbox>
+  </vbox>
+</dialog>

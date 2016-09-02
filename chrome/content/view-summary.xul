@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xul-overlay href="chrome://ai-sidebar/content/summary-rc.xul"?>
+<?xul-overlay href="chrome://ai-sidebar/content/summary-wcag.xul"?>
+<!DOCTYPE overlay SYSTEM "chrome://ai-sidebar/locale/ai-sidebar.dtd">
+
+<overlay id="ainspector-summary-view-overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script src="view-summary.js"/>
+
+  <vbox id="ainspector-summary-view">
+
+    <vbox>
+      <hbox>
+        <spacer flex="4"/>
+        <grid>
+          <rows>
+            <row class="summary-grid-header"
+              id="ainspector-page-summary-header"/>
+            <row class="summary-grid-data" role="region"
+              id="ainspector-page-summary-data"
+              onfocus="this.setAttribute('style', '&ai-border.focus;')"
+              onblur="this.setAttribute('style', '&ai-border.trans;')"/>
+          </rows>
+        </grid>
+        <spacer flex="4"/>
+      </hbox>
+    </vbox>
+
+    <spacer height="20"/>
+
+    <tabbox id="ainspector-summary-tabbox" persist="selectedIndex label">
+      <tabs id="ainspector-summary-tabs"
+        onselect="ainspectorSidebar.setStateSummaryView()"
+        style="font-size: 110%">
+        <tab label="&ai-summary.label.categories;"/>
+        <tab label="&ai-summary.label.guidelines;"/>
+      </tabs>
+      <tabpanels>
+        <tabpanel>
+          <vbox id="ainspector-category-summary"/>
+        </tabpanel>
+        <tabpanel>
+          <vbox id="ainspector-guideline-summary"/>
+        </tabpanel>
+      </tabpanels>
+    </tabbox>
+
+    <spacer height="6"/>
+
+    <vbox>
+      <hbox align="center" style="padding: 2px 0">
+        <spacer flex="3"/>
+        <button id="ainspector-summary-details-button"
+          label="&ai-button.label.summaryDetails;"
+          image="chrome://ai-sidebar/skin/fwd-button.png" dir="reverse"
+          style="margin: 0; min-width: 0"
+          oncommand="ainspectorSidebar.selectViewFromSummaryTable()"/>
+      </hbox>
+    </vbox>
+
+  </vbox>
+
+</overlay>

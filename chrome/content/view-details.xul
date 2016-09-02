@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://ai-sidebar/locale/ai-sidebar.dtd">
+
+<overlay id="ainspector-details-view-overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script src="view-details.js"/>
+  <script src="rule-info.js"/>
+  <script src="element-results.js"/>
+
+  <vbox id="ainspector-details-view">
+
+    <spacer height="6"/>
+
+    <vbox>
+      <hbox align="baseline" pack="start">
+        <vbox id="ainspector-rule-summary"
+          flex="10" height="16"
+          onfocus="this.setAttribute('style', '&ai-border.focus;')"
+          onblur="this.setAttribute('style', '&ai-border.trans;')"/>
+        <label id="ainspector-rule-result-value"
+          class="summary-header-label"
+          width="42" maxwidth="42"
+          flex="1"/>
+      </hbox>
+    </vbox>
+
+    <spacer height="12"/>
+
+    <tabbox id="ainspector-details-tabbox"
+      persist="selectedIndex label">
+      <tabs id="ainspector-details-tabs"
+        onselect="ainspectorSidebar.setStateDetailsTabs()"
+        style="font-size: 110%">
+        <tab label="&ai-details.label.rule-info;"/>
+        <tab label="&ai-details.label.elements;"/>
+      </tabs>
+      <tabpanels>
+        <vbox id="ainspector-details-rule-info"
+          onfocus="this.setAttribute('style', '&ai-border.focus;')"
+          onblur="this.setAttribute('style', '&ai-border.normal;')"/>
+        <tree id="ainspector-element-results-tree"
+          rows="10" seltype="single" style="margin: 0"
+          persist="sortDirection sortResource"
+          sortDirection="descending"
+          sortResource="ainspector-elem-result-col"
+          hidecolumnpicker="true"
+          onfocus="ainspectorSidebar.updateSelectedElement(this)"
+          onselect="ainspectorSidebar.updateSelectedElement(this)"
+          ondblclick="ainspectorSidebar.handleERTreeEvent(event)"
+          onkeypress="ainspectorSidebar.handleERTreeEvent(event)">
+          <treecols>
+            <treecol id="ainspector-element-col"
+              flex="1" minwidth="70"
+              ignoreincolumnpicker="true"
+              label="&ai-treecol.element;"
+              tooltiptext="&ai-treecol.elementTooltip;"
+              persist="width"
+              onclick="ainspectorSidebar.sortElementResults(this)"
+              class="sortDirectionIndicator"/>
+            <splitter class="tree-splitter"/>
+            <treecol id="ainspector-elem-result-col"
+              width="56" minwidth="56" maxwidth="100"
+              ignoreincolumnpicker="true"
+              label="&ai-treecol.result;"
+              style="text-align: left"
+              tooltiptext="&ai-treecol.resultTooltip;"
+              persist="width"
+              onclick="ainspectorSidebar.sortElementResults(this)"
+              class="sortDirectionIndicator"/>
+            <splitter class="tree-splitter"/>
+            <treecol id="ainspector-order-col"
+              width="56" minwidth="56" maxwidth="60"
+              ignoreincolumnpicker="true"
+              label="&ai-treecol.position;"
+              style="text-align: left; padding-right: 16px"
+              tooltiptext="&ai-treecol.positionTooltip;"
+              persist="width"
+              onclick="ainspectorSidebar.sortElementResults(this)"
+              class="sortDirectionIndicator"/>
+            <splitter class="tree-splitter"/>
+            <treecol id="ainspector-action-col"
+              width="70" minwidth="70"
+              ignoreincolumnpicker="true"
+              label="&ai-treecol.action;"
+              style="text-align: left"
+              tooltiptext="&ai-treecol.actionTooltip;"
+              persist="width"
+              onclick="ainspectorSidebar.sortElementResults(this)"
+              class="sortDirectionIndicator"/>
+          </treecols>
+          <treechildren/>
+        </tree>
+      </tabpanels>
+    </tabbox>
+
+    <spacer height="4"/>
+
+    <vbox>
+      <hbox align="baseline">
+        <button
+          id="ainspector-inspect-element"
+          label="&ai-button.label.inspect;"
+          tooltiptext="&ai-button.tooltip.inspect;"
+          oncommand="ainspectorSidebar.inspectSelectedElement()"/>
+        <spacer flex="2"/>
+        <description>&ai-description.highlight;</description>
+        <menulist id="ainspector-highlight-option"
+          flex="1" width="50"
+          persist="value label"
+          oncommand="ainspectorSidebar.updateHighlight()"
+          tooltiptext="&ai-tooltip.highlight-menu;">
+          <menupopup>
+            <menuitem
+              label="&ai-label.highlight.none;"
+              tooltiptext="&ai-tooltip.highlight.none;"
+              value="0"/>
+            <menuitem
+              label="&ai-label.highlight.selected;"
+              tooltiptext="&ai-tooltip.highlight.selected;"
+              value="1"/>
+            <menuitem
+              label="&ai-label.highlight.v-w;"
+              tooltiptext="&ai-tooltip.highlight.v-w;"
+              value="2"/>
+            <menuitem
+              label="&ai-label.highlight.mc;"
+              tooltiptext="&ai-tooltip.highlight.mc;"
+              value="3"/>
+            <menuitem
+              label="&ai-label.highlight.all;"
+              tooltiptext="&ai-tooltip.highlight.all;"
+              value="4"/>
+          </menupopup>
+        </menulist>
+      </hbox>
+    </vbox>
+
+  </vbox>
+</overlay>

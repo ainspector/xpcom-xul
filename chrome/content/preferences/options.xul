@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://browser/skin/preferences/preferences.css"?>
+<?xml-stylesheet href="chrome://ai-sidebar/skin/options.css"?>
+
+<!DOCTYPE prefwindow SYSTEM "chrome://ai-sidebar/locale/options.dtd">
+
+<prefwindow id="ainspector-preferences"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  style="width:24em;">
+
+  <stringbundleset>
+    <stringbundle id="ainspector-options-properties"
+      src="chrome://ai-sidebar/locale/options.properties"/>
+  </stringbundleset>
+
+  <script src="options.js"/>
+
+  <prefpane id="ainspector-pane-general"
+    label="&prefpane.general.title;"
+    src="chrome://ai-sidebar/content/preferences/general.xul"/>
+
+  <prefpane id="ainspector-pane-evaluation"
+    label="&prefpane.evaluation.title;"
+    src="chrome://ai-sidebar/content/preferences/evaluation.xul"/>
+
+</prefwindow>
