@@ -16,24 +16,12 @@ fi
 rm -f $FILE_LIST *.xpi
 
 # Build the file list
-find . \( -path '*.svn*' -o \
+find . \( -path '*.git*' -o \
           -path '*docs*' -o \
-          -path '*api_docs*' -o \
-          -path '*testsuite*' -o \
-          -path '*tar*' -o \
-          -path '*zip*' -o \
-          -path '*md5*' -o \
-          -path '*/openajax_a11y/nls/*' -o \
-          -path '*/openajax_a11y/rules/*' -o \
-          -path '*/openajax_a11y/rulesets/*' -o \
-          -path '*/openajax_a11y/scripts/*' -o \
-          -path '*/openajax_a11y/wai_aria/*' -o \
           -name '.DS_Store' -o \
           -name '.jshintrc' -o \
           -name 'build_xpi.sh' -o \
-          -name 'make_*' -o \
-          -name 'openajax_a11y_constants.js' -o \
-          -name 'openajax_a11y.js' -o \
+          -name 'README.md' -o \
           -name $FILE_LIST \) -prune -o \
           -type f -print | grep -v \~ >> $FILE_LIST
 
