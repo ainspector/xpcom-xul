@@ -4357,8 +4357,8 @@ OpenAjax.a11y.RuleManager.addRulesNLSFromJSON('en-us', {
             SUMMARY:               'Verify @aria-flowto@ supports reading order',
             TARGET_RESOURCES_DESC: 'Elements with @aria-flowto@ attribute',
             RULE_RESULT_MESSAGES: {
-              MANUAL_CHECK_S:    'Verify the use of the @aria-flowto@ attribute defines a meaningful reading order as rendered by assistive technologies.',   
-              MANUAL_CHECK_P:    'Verify the use %N_MC @aria-flowto@ attributes define a meaningful reading order as rendered by assistive technologies.',
+              MANUAL_CHECK_S:    'Verify the element with the @aria-flowto@ attribute contributes to the intended reading order of content on the page.',   
+              MANUAL_CHECK_P:    'Verify the %N_MC elements with the @aria-flowto@ attributes contribute to the intended reading order of content on the page.',
               HIDDEN_S:          'One element with @aria-flowto@ attribute that is hidden was not evaluated.',
               HIDDEN_P:          '%N_H elements with @aria-flowto@ attribute that are hidden were not evaluated.',                 
               NOT_APPLICABLE:  'No elements with @aria-flowto@ attribute found.'              
@@ -4370,12 +4370,12 @@ OpenAjax.a11y.RuleManager.addRulesNLSFromJSON('en-us', {
             PURPOSE: [
               'The reading order of content on the page can, in some cases, be made easier to understand by users of assistive technology with the use of @aria-flowto@.',
               'By default the reading order used by assisitive technologies is the same as the DOM ordering of content.',
-              'When the DOM order of content is interspersed with unrelated content, @aria-flowto@ can be used to keep related content together.',
-              'For example a multi-column newspaper where an article spans several columns, @aria-flowto@ can be used to make it look like one continious column to assistive technology.',
+              'When the DOM order of content is interspersed with unrelated content, @aria-flowto@ can be used to keep related content together.  For example a multi-column newspaper where an article spans several columns, @aria-flowto@ can be used to make it look like one continuous column to assistive technology.',
               'The @aria-flowto@ reorganizes the content by changing the order of how the content is represented in accessibility Application Programming Interfaces (APIs) used by operating systems to communicate to screen readers.'                
             ],
             TECHNIQUES: [
-              'Read the page with a screen reader to verify the content affected by the @aria-flowto@ places related information in the proper sequence.'
+              'The @aria-flowto@ attribute value contains a sequence of @idrefs@ that changes the reading order of content on the page as rendered by assistive technologies.',
+              'Since @aria-flowto@ changes reading order to assistive technologies, it is important to read the page with a screen reader to verify the content affected by the @aria-flowto@ places related information in the proper sequence.'
             ],
             MANUAL_CHECKS: [
             ],
@@ -7845,8 +7845,8 @@ OpenAjax.a11y.RuleManager.addRulesNLSFromJSON('en-us', {
               ELEMENT_MC_2:       'Verify the @alert@ role identifies a live region with critical time-sensitive information.',
               ELEMENT_MC_3:       'Verify the @log@ role identifies a live region where new information added and deleted in a meaningful order.',
               ELEMENT_MC_4:       'Verify the @alert@ role identifies a live region with advisory information.',
-              ELEMENT_HIDDEN_1:   '[arial-live="%1"]@ was not evaluated because it is hidden from assistive technologies.',
-              ELEMENT_HIDDEN_2:   '[role="%1"]@ was not evaluated because it is hidden from assistive technologies.'
+              ELEMENT_HIDDEN_1:   '@%1[arial-live="%2"]@ was not evaluated because it is hidden from assistive technologies.',
+              ELEMENT_HIDDEN_2:   '@%1[role="%2"]@ was not evaluated because it is hidden from assistive technologies.'
             },
             PURPOSE: [
               'ARIA live regions provide a mechanism for displaying dynamic text content on a page such that changes in the content will be automatically announced to screen reader users while they are focusing on other parts of the page.',
@@ -8196,7 +8196,7 @@ OpenAjax.a11y.RuleManager.addRulesFromJSON([
                 bypass_links.push(le);
                 rule_result.addResult(TEST_RESULT.PASS, le, 'ELEMENT_PASS_2', []);
 
-                OpenAjax.a11y.logger.debug("[BYPASS 1] tag: " + de.tag_name + " tabindex: " + de.tab_index  + " has tabindex: " + de.has_tabindex + " has href: " + de.has_href );
+//                OpenAjax.a11y.logger.debug("[BYPASS 1] tag: " + de.tag_name + " tabindex: " + de.tab_index  + " has tabindex: " + de.has_tabindex + " has href: " + de.has_href );
                 
                 if ((de.tag_name !== 'a') || 
                     (de.tab_index < 0) || 
