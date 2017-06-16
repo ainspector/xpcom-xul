@@ -45,17 +45,6 @@ ainspectorSidebar.isFirefoxVersionGte = function (minVersion) {
   return (compareResult >= 0)
 }
 
-/*
-if (ainspectorSidebar.isFirefoxVersionGte('44.*')) {
-  Components.utils.import("resource://devtools/shared/Loader.jsm", ainspectorSidebar);
-  Components.utils.import("resource:///modules/devtools/client/framework/gDevTools.jsm", ainspectorSidebar);
-}
-else {
-  Components.utils.import("resource://gre/modules/devtools/Loader.jsm", ainspectorSidebar);
-  Components.utils.import("resource:///modules/devtools/gDevTools.jsm", ainspectorSidebar);
-}
-*/
-
 // import Page Inspector modules: Loader, which exports 'devtools' symbol,
 // and gDevTools. Note: Paths to these modules were changed in Firefox 44.
 try {
