@@ -298,14 +298,41 @@ ainspectorSidebar.updateElementResults = function (ruleResult) {
  */
 
 ainspectorSidebar.inspectNode = function (node) {
-  let devtools  = ainspectorSidebar.devtools;
-  let gDevTools = ainspectorSidebar.gDevTools;
-  let gBrowser = parent.gBrowser;
-  let target = devtools.TargetFactory.forTab(gBrowser.selectedTab);
+  let devtools  = ainspectorSidebar.devtools,
+      gDevTools = ainspectorSidebar.gDevTools,
+      loader    = ainspectorSidebar.loader,
+      gBrowser  = parent.gBrowser,
+      target    = devtools.TargetFactory.forTab(gBrowser.selectedTab);
 
+  /*
   gDevTools.showToolbox(target, "inspector").then(function (toolbox) {
     let inspector = toolbox.getCurrentPanel();
     inspector.selection.setNode(node, "browser-context-menu");
+  });
+  */
+
+  // Code from https://reviewboard.mozilla.org/r/92740/diff/3#index_header
+  loader.lazyRequireGetter(ainspectorSidebar, "findCssSelector", "devtools/shared/inspector/css-logic", true);
+  let selector = ainspectorSidebar.findCssSelector(node);
+
+  return gDevTools.showToolbox(target, "inspector").then(function (toolbox) {
+    let inspector = toolbox.getCurrentPanel();
+
+    // new-node-front tells us when the node has been selected, whether the
+    // browser is remote or not.
+    let onNewNode = inspector.selection.once("new-node-front");
+
+    inspector.walker.getRootNode().then(function (rootNode) {
+      return inspector.walker.querySelector(rootNode, selector);
+    }).then(function (node) {
+      inspector.selection.setNodeFront(node, "browser-context-menu");
+    });
+
+    return onNewNode.then(function () {
+      // Now that the node has been selected, wait until the inspector is
+      // fully updated.
+      return inspector.once("inspector-updated");
+    });
   });
 };
 
