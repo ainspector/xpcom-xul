@@ -312,8 +312,12 @@ ainspectorSidebar.inspectNode = function (node) {
   */
 
   // Code from https://reviewboard.mozilla.org/r/92740/diff/3#index_header
-  loader.lazyRequireGetter(ainspectorSidebar, "findCssSelector", "devtools/shared/inspector/css-logic", true);
-  let selector = ainspectorSidebar.findCssSelector(node);
+  // loader.lazyRequireGetter(ainspectorSidebar, "findCssSelector", "devtools/shared/inspector/css-logic", true);
+  // let selector = ainspectorSidebar.findCssSelector(node);
+
+  // Updated for Firefox 52.7.3 based on code in devtools/server/actors/inspector.js
+  loader.lazyRequireGetter(ainspectorSidebar, "CssLogic", "devtools/server/css-logic", true);
+  let selector = ainspectorSidebar.CssLogic.findCssSelector(node)
 
   return gDevTools.showToolbox(target, "inspector").then(function (toolbox) {
     let inspector = toolbox.getCurrentPanel();
