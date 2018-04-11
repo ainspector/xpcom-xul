@@ -51,7 +51,7 @@ ainspectorSidebar.getRuleInfoLabels = function () {
  */
 
 ainspectorSidebar.getResultValueProps = function (ruleResult) {
-  
+
   var nls = ainspectorSidebar.nlsProperties,
       rvo = {}; // result value object
 
@@ -97,7 +97,7 @@ ainspectorSidebar.getResultValueProps = function (ruleResult) {
  */
 
 ainspectorSidebar.setDetailsSummaryContent = function (ruleResult) {
-  var getHTML = ainspectorSidebar.createXHTMLElement,      
+  var getHTML = ainspectorSidebar.createXHTMLElement,
       addHTML = ainspectorSidebar.appendXHTMLElement,
       pFirstStyle = ainspector.html.pFirstStyle,
       ruleSummaryVbox, ruleSummary,
@@ -238,7 +238,7 @@ ainspectorSidebar.setDetailsRuleInfoContent = function (ruleResult) {
   primary = rule.getPrimarySuccessCriterion();
   li = getHTML("li", null, null);
   a = getHTML("a", primary.title, {
-    "href": primary.url,
+    "href": primary.url_spec,
     "target": "_blank",
     "style": "text-decoration: underline"
   });
@@ -250,7 +250,7 @@ ainspectorSidebar.setDetailsRuleInfoContent = function (ruleResult) {
   for (let i = 0; i < related.length; i++) {
     li = getHTML("li", null, null);
     a = getHTML("a", related[i].title, {
-      "href": related[i].url,
+      "href": related[i].url_spec,
       "target": "_blank",
       "style": "text-decoration: underline"
     });
